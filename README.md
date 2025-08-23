@@ -1,6 +1,6 @@
 # PanSou 网盘搜索API
 
-PanSou是一个高性能的网盘资源搜索API服务，支持TG搜索和自定义插件搜索。系统设计以性能和可扩展性为核心，支持并发搜索、结果智能排序和网盘类型分类。
+PanSou是一个高性能的网盘资源搜索API服务，支持TG搜索和自定义插件搜索。系统设计以性能和可扩展性为核心，支持并发搜索、结果智能排序和网盘类型分类。这是由huaguihai维护的分支版本。
 
 
 ## 特性（[详见系统设计文档](docs/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3.md)）
@@ -17,7 +17,7 @@ PanSou是一个高性能的网盘资源搜索API服务，支持TG搜索和自定
 
 ## 快速开始
 
-在 Github 上先[![Fork me on GitHub](https://raw.githubusercontent.com/fishforks/fish2018/refs/heads/main/forkme.png)](https://github.com/fish2018/pansou/fork)
+在 Github 上先[![Fork me on GitHub](https://raw.githubusercontent.com/fishforks/fish2018/refs/heads/main/forkme.png)](https://github.com/huaguihai/pansou/fork)
 本项目，并点上 Star !!!
 
 ### 使用Docker部署
@@ -36,7 +36,7 @@ docker run -d --name pansou -p 80:80 ghcr.io/fish2018/pansou-web
 ##### 使用Docker Compose（推荐）
 ```
 # 下载配置文件
-curl -o docker-compose.yml https://raw.githubusercontent.com/fish2018/pansou-web/refs/heads/main/docker-compose.yml
+curl -o docker-compose.yml https://raw.githubusercontent.com/huaguihai/pansou-web/refs/heads/main/docker-compose.yml
 
 # 启动服务
 docker-compose up -d
@@ -50,14 +50,14 @@ docker-compose logs -f
 ##### 直接使用Docker命令
 
 ```bash
-docker run -d --name pansou -p 8888:8888 -v pansou-cache:/app/cache -e CHANNELS="tgsearchers3,xxx" ghcr.io/fish2018/pansou:latest
+docker run -d --name pansou -p 8888:8888 -v pansou-cache:/app/cache -e CHANNELS="tgsearchers3,xxx" ghcr.io/huaguihai/pansou:latest
 ```
 
 ##### 使用Docker Compose（推荐）
 
 ```bash
 # 下载配置文件
-curl -o docker-compose.yml  https://raw.githubusercontent.com/fish2018/pansou/refs/heads/main/docker-compose.yml
+curl -o docker-compose.yml  https://raw.githubusercontent.com/huaguihai/pansou/refs/heads/main/docker-compose.yml
 
 # 启动服务
 docker-compose up -d
@@ -76,7 +76,7 @@ http://localhost:8888
 1. 克隆仓库
 
 ```bash
-git clone https://github.com/fish2018/pansou.git
+git clone https://github.com/huaguihai/pansou.git
 cd pansou
 ```
 
@@ -386,4 +386,4 @@ GET /api/search?kw=速度与激情&channels=tgsearchers3,xxx&conc=2&refresh=true
 
 ## ⭐ Star 历史
 
-[![Star History Chart](https://api.star-history.com/svg?repos=fish2018/pansou&type=Date)](https://star-history.com/#fish2018/pansou&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=huaguihai/pansou&type=Date)](https://star-history.com/#huaguihai/pansou&Date)
