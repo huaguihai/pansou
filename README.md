@@ -22,48 +22,63 @@ PanSou是一个高性能的网盘资源搜索API服务，支持TG搜索和自定
 
 ### 使用Docker部署
 
+> 前提条件：请确保您已安装 [Docker](https://docs.docker.com/get-docker/)
 
-#### 前后端集成版
+本项目提供两种部署版本：
+- **前后端集成版**：包含美观的Web界面和后端API，适合直接提供给用户使用
+- **纯后端API**：仅提供API接口，适合开发者集成到自己的项目中
 
-##### 直接使用Docker命令
+#### 1. 前后端集成版
 
-一键启动，开箱即用，无需任何配置
+##### 方式一：直接使用Docker命令
 
-```
+```bash
+# 一键启动，开箱即用
 docker run -d --name pansou -p 80:80 ghcr.io/huaguihai/pansou:latest
 ```
 
-##### 使用Docker Compose（推荐）
-```
-# 下载配置文件
+参数说明：
+- `-d`：后台运行容器
+- `--name pansou`：容器名称，可自定义
+- `-p 80:80`：将容器内的80端口映射到主机的80端口，格式为"主机端口:容器端口"，可根据需要修改主机端口，如 `-p 8080:80`
+
+##### 方式二：使用Docker Compose（推荐）
+
+```bash
+# 1. 下载配置文件
 curl -o docker-compose.yml https://raw.githubusercontent.com/huaguihai/pansou-web/refs/heads/main/docker-compose.yml
 
-# 启动服务
+# 2. 启动服务
 docker-compose up -d
 
-# 查看日志
+# 3. 查看日志（可选）
 docker-compose logs -f
 ```
 
-#### 纯后端API
+#### 2. 纯后端API
 
-##### 直接使用Docker命令
+##### 方式一：直接使用Docker命令
 
 ```bash
-docker run -d --name pansou -p 8888:8888 -v pansou-cache:/app/cache -e CHANNELS="tgsearchers3,xxx" ghcr.io/huaguihai/pansou:latest
+docker run -d --name pansou-api -p 8888:8888 -v pansou-cache:/app/cache -e CHANNELS="tgsearchers3,xxx" ghcr.io/huaguihai/pansou:latest
 ```
 
-##### 使用Docker Compose（推荐）
+参数说明：
+- `-p 8888:8888`：将容器内的8888端口映射到主机的8888端口，可根据需要修改
+- `-v pansou-cache:/app/cache`：创建数据卷，持久化缓存数据
+- `-e CHANNELS="tgsearchers3,xxx"`：设置环境变量，指定要搜索的TG频道
+
+##### 方式二：使用Docker Compose（推荐）
 
 ```bash
-# 下载配置文件
-curl -o docker-compose.yml  https://raw.githubusercontent.com/huaguihai/pansou/refs/heads/main/docker-compose.yml
+# 1. 下载配置文件
+curl -o docker-compose.yml https://raw.githubusercontent.com/huaguihai/pansou/refs/heads/main/docker-compose.yml
 
-# 启动服务
+# 2. 启动服务
 docker-compose up -d
 
-# 访问服务
-http://localhost:8888
+# 3. 访问服务
+# 在浏览器中打开：http://localhost:8888
 ```
 
 ### 从源码安装
