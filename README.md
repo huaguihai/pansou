@@ -34,7 +34,7 @@ PanSou是一个高性能的网盘资源搜索API服务，支持TG搜索和自定
 
 ```bash
 # 一键启动，开箱即用
-docker run -d --name pansou -p 80:80 ghcr.io/huaguihai/pansou:latest
+docker run -d --name pansou -p 80:80 ghcr.io/huaguihai/pansou:main
 ```
 
 参数说明：
@@ -60,7 +60,7 @@ docker-compose logs -f
 ##### 方式一：直接使用Docker命令
 
 ```bash
-docker run -d --name pansou-api -p 8888:8888 -v pansou-cache:/app/cache -e CHANNELS="tgsearchers3,xxx" ghcr.io/huaguihai/pansou:latest
+docker run -d --name pansou-api -p 8888:8888 -v pansou-cache:/app/cache -e CHANNELS="tgsearchers3,xxx" ghcr.io/huaguihai/pansou:main
 ```
 
 参数说明：
