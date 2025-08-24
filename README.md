@@ -33,6 +33,8 @@ PanSou是一个高性能的网盘资源搜索API服务，支持TG搜索和自定
 docker run -d --name pansou -p 80:80 ghcr.io/fish2018/pansou-web
 ```
 
+> 注意：目前使用的是原作者的Docker镜像。当我的Docker镜像准备就绪后，将更新为：`ghcr.io/huaguihai/pansou-web`
+
 ##### 使用Docker Compose（推荐）
 ```
 # 下载配置文件
