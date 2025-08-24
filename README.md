@@ -46,7 +46,7 @@ docker run -d --name pansou -p 80:80 ghcr.io/huaguihai/pansou:latest
 
 ```bash
 # 1. 下载配置文件
-curl -o docker-compose.yml https://raw.githubusercontent.com/huaguihai/pansou-web/refs/heads/main/docker-compose.yml
+curl -o docker-compose.yml https://raw.githubusercontent.com/huaguihai/pansou/main/docker-compose.yml
 
 # 2. 启动服务
 docker-compose up -d
