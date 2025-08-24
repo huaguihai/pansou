@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   pansou:
-    image: ghcr.io/huaguihai/pansou:latest
+    image: ghcr.io/huaguihai/pansou:main
     container_name: pansou
     restart: unless-stopped
     ports:
