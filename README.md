@@ -34,13 +34,13 @@ PanSou是一个高性能的网盘资源搜索API服务，支持TG搜索和自定
 
 ```bash
 # 一键启动，开箱即用
-docker run -d --name pansou -p 80:80 ghcr.io/huaguihai/pansou:main
+docker run -d --name pansou -p 8080:8888 ghcr.io/huaguihai/pansou:main
 ```
 
 参数说明：
 - `-d`：后台运行容器
 - `--name pansou`：容器名称，可自定义
-- `-p 80:80`：将容器内的80端口映射到主机的80端口，格式为"主机端口:容器端口"，可根据需要修改主机端口，如 `-p 8080:80`
+- `-p 8080:8888`：将容器内的8888端口映射到主机的8080端口，格式为"主机端口:容器端口"，可根据需要修改主机端口，如 `-p 9000:8888`
 
 ##### 方式二：使用Docker Compose（推荐）
 
@@ -60,11 +60,11 @@ docker-compose logs -f
 ##### 方式一：直接使用Docker命令
 
 ```bash
-docker run -d --name pansou-api -p 8888:8888 -v pansou-cache:/app/cache -e CHANNELS="tgsearchers3,xxx" ghcr.io/huaguihai/pansou:main
+docker run -d --name pansou-api -p 8080:8888 -v pansou-cache:/app/cache -e CHANNELS="tgsearchers3,xxx" ghcr.io/huaguihai/pansou:main
 ```
 
 参数说明：
-- `-p 8888:8888`：将容器内的8888端口映射到主机的8888端口，可根据需要修改
+- `-p 8080:8888`：将容器内的8888端口映射到主机的8080端口，可根据需要修改
 - `-v pansou-cache:/app/cache`：创建数据卷，持久化缓存数据
 - `-e CHANNELS="tgsearchers3,xxx"`：设置环境变量，指定要搜索的TG频道
 
@@ -78,7 +78,7 @@ curl -o docker-compose.yml https://raw.githubusercontent.com/huaguihai/pansou/re
 docker-compose up -d
 
 # 3. 访问服务
-# 在浏览器中打开：http://localhost:8888
+# 在浏览器中打开：http://localhost:8080
 ```
 
 ### 从源码安装

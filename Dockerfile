@@ -71,9 +71,9 @@ LABEL org.opencontainers.image.title="PanSou" \
       org.opencontainers.image.version="${VERSION}" \
       org.opencontainers.image.created="${BUILD_DATE}" \
       org.opencontainers.image.revision="${VCS_REF}" \
-      org.opencontainers.image.url="https://github.com/fish2018/pansou" \
-      org.opencontainers.image.source="https://github.com/fish2018/pansou" \
-      maintainer="fish2018"
+      org.opencontainers.image.url="https://github.com/huaguihai/pansou" \
+      org.opencontainers.image.source="https://github.com/huaguihai/pansou" \
+      maintainer="huaguihai"
 
 # 运行应用
 CMD ["/app/pansou"]
